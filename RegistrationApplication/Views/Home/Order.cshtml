@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "Order";
+
+  
+    <h3>@ViewData["Message"]</h3>
+
+}
+@{
+    <h5>Welcome to Order Form</h5>
+    <h6>The time on the server is @DateTime.Now</h6>
+}
+@model OrderModel  
+
+    <form asp-controller="Demo" asp-action="Order" method="post">
+        <label asp-for="FirstName"></label>   <input asp-for="FirstName"/>  
+        <label asp-for="BaseFillingId" ></label>
+        <select asp-for="BaseFillingId" asp-items="Model.BaseFilling" >
+            <option>Select One</option>
+            </select><\br> 
+        <label asp-for="CreamTypeString"></label>
+     <radio-tag-helpers item="Model.CreamType" name="CreamType"></radio-tag-helpers>
+     
+    <button>Submit</button>
+
+ </form>
+
